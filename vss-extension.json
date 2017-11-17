@@ -40,20 +40,20 @@
     },
     "contributions": [
         {
-            "id": "task-deployapi",
+            "id": "task-deployApi",
             "type": "ms.vss-distributed-task.task",
             "description": "Deploy API",
             "targets": [
                 "ms.vss-distributed-task.task"
             ],
             "properties": {
-                "name": "deploy-api"
+                "name": "deployApi"
             }
         }
     ],
     "files": [
         {
-            "path": "deploy-api"
+            "path": "deployApi"
         },
         {
             "path": "images/apim.png", "addressable": true
