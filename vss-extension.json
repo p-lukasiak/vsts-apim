@@ -1,0 +1,48 @@
+{
+    "manifestVersion": 1,
+    "id": "apim-deploy",
+    "version": "0.1.0",
+    "name": "API Management Deployment",
+    "description": "Deployment tools for Azure API Management.",
+    "publisher": "plukasiak",
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+            }
+        ],
+    "icons": {
+        "default": "images/apim.png"
+     },
+    "contributions": [
+        {
+            "id": "PLukasiak.APIM_Hello",
+            "type": "ms.vss-web.hub",
+            "description": "Adds a 'Hello' hub to the Work hub group.",
+            "targets": [
+                "ms.vss-work-web.work-hub-group"
+                ],
+            "properties": {
+                "name": "Hello",
+                "order": 99,
+                "uri": "hello-world.html"
+            }
+        }
+    ],
+    "scopes": [
+        "vso.work"
+    ],
+    "files": [
+        {
+            "path": "hello-world.html", "addressable": true
+        },
+        {
+            "path": "scripts", "addressable": true
+        },
+        {
+            "path": "sdk/scripts", "addressable": true
+        },
+        {
+            "path": "images/apim.png", "addressable": true
+        }
+    ]
+}
