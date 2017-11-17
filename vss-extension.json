@@ -1,7 +1,7 @@
 {
     "manifestVersion": 1,
     "id": "apim-deploy",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "name": "API Management Deployment",
     "description": "Deployment tools for Azure API Management.",
     "publisher": "plukasiak",
@@ -13,33 +13,47 @@
     "icons": {
         "default": "images/apim.png"
      },
+    "scopes": [
+        "vso.build_execute"
+    ],
+    "categories": [
+        "Build and release"
+    ],
+    "tags": [
+        "Utility",
+        "Deploy API",
+        "API Management",
+        "Deploy Task"
+    ],
+    "content": {
+        "details": {
+            "path": "README.md"
+        }
+    },
+    "repository": {
+        "type": "git",
+        "uri": "https://github.com/p-lukasiak/vsts-apim.git"
+    },
+    "branding": {
+        "color": "#0088DC",
+        "theme": "light"
+    },
     "contributions": [
         {
-            "id": "PLukasiak.APIM_Hello",
-            "type": "ms.vss-web.hub",
-            "description": "Adds a 'Hello' hub to the Work hub group.",
+            "id": "task-deployapi",
+            "type": "ms.vss-distributed-task.task",
+            "description": "Deploy API",
             "targets": [
-                "ms.vss-work-web.work-hub-group"
-                ],
+                "ms.vss-distributed-task.task"
+            ],
             "properties": {
-                "name": "Hello",
-                "order": 99,
-                "uri": "hello-world.html"
+                "name": "deploy-api"
             }
         }
     ],
-    "scopes": [
-        "vso.work"
-    ],
     "files": [
         {
-            "path": "hello-world.html", "addressable": true
-        },
-        {
-            "path": "scripts", "addressable": true
-        },
-        {
-            "path": "sdk/scripts", "addressable": true
+            "path": "deploy-api"
         },
         {
             "path": "images/apim.png", "addressable": true
