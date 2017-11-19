@@ -1,7 +1,7 @@
 {
     "manifestVersion": 1,
     "id": "apim-deploy",
-    "version": "0.1.4",
+    "version": "0.1.5",
     "name": "API Management Deployment",
     "description": "Deployment tools for Azure API Management.",
     "publisher": "plukasiak",
