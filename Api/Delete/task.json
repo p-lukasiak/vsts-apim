@@ -1,9 +1,9 @@
 {
     "id": "934b8cd0-65d0-4a5c-95e9-d3796ce7f65d",
-    "name": "deployApi",
-    "friendlyName": "Deploy API",
-    "description": "Deploy API in Azure API Management",
-    "author": "plukasiak",
+    "name": "API/Delete",
+    "friendlyName": "Delete API",
+    "description": "Delete API in Azure API Management",
+    "author": "Pawel Lukasiak",
     "helpMarkDown": "[More Information](https://github.com/p-lukasiak/vsts-apim)",
     "category": "Deploy",
     "visibility": [
@@ -13,17 +13,17 @@
     "version": {
       "Major": "0",
       "Minor": "1",
-      "Patch": "1"
+      "Patch": "2"
     },
-    "instanceNameFormat": "Deploy API",
+    "instanceNameFormat": "Delete API",
     "inputs": [
       {
-        "name": "swaggerFile",
+        "name": "apiName",
         "type": "filePath",
-        "label": "Path to the swagger file",
+        "label": "Name of the API",
         "defaultValue": "",
         "required": true,
-        "helpMarkDown": "Path to the swagger file with API definition"
+        "helpMarkDown": "Name of the API that should be deleted."
       }
     ],
     "execution": {
