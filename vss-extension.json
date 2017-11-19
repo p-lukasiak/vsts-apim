@@ -1,7 +1,7 @@
 {
     "manifestVersion": 1,
     "id": "apim-deploy",
-    "version": "0.1.4",
+    "version": "0.1.5",
     "name": "API Management Deployment",
     "description": "Deployment tools for Azure API Management.",
     "publisher": "plukasiak",
@@ -13,47 +13,18 @@
     "icons": {
         "default": "images/apim.png"
      },
-    "scopes": [
-        "vso.build_execute"
-    ],
-    "categories": [
-        "Build and release"
-    ],
-    "tags": [
-        "Utility",
-        "Deploy API",
-        "API Management",
-        "Deploy Task"
-    ],
-    "content": {
-        "details": {
-            "path": "README.md"
-        }
-    },
-    "repository": {
-        "type": "git",
-        "uri": "https://github.com/p-lukasiak/vsts-apim.git"
-    },
-    "branding": {
-        "color": "#0088DC",
-        "theme": "light"
-    },
     "contributions": [
-        {
-            "id": "task-deleteAPI",
-            "type": "ms.vss-distributed-task.task",
-            "description": "Delete API",
-            "targets": [
-                "ms.vss-distributed-task.tasks"
-            ],
-            "properties": {
-                "name": "API/Delete"
-            }
-        }
+        
+    ],
+    "scopes": [
+        
     ],
     "files": [
         {
-            "path": "API/Delete"
+            "path": "scripts", "addressable": true
+        },
+        {
+            "path": "sdk/scripts", "addressable": true
         },
         {
             "path": "images/apim.png", "addressable": true
