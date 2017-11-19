@@ -63,10 +63,10 @@
                 "displayName": "Management API URL",
                 "value": ""
               },
-              "helpMarkDown": "URL of your APIM Management REST API. Accquired Security->API page in the publisher portal of your APIM.",
+              "helpMarkDown": "Connection endpoint to APIM Management REST API. The identifer and keys can be retrived from Security->API page in the Publisher portal of your APIM.",
               "authenticationSchemes": [
                 {
-                  "type": "ms.vss-endpoint.endpoint-auth-scheme-basic",
+                  "type": "ms.vss-endpoint.endpoint-auth-scheme-none",
                   "inputDescriptors": [
                     {
                       "id": "identifier",
