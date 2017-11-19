@@ -49,7 +49,59 @@
             "properties": {
                 "name": "API/Delete"
             }
-        }
+        },
+        {
+            "id": "apim-endpoint-type",
+            "type": "ms.vss-endpoint.service-endpoint-type",
+            "targets": [
+              "ms.vss-endpoint.endpoint-types"
+            ],
+            "properties": {
+              "name": "APIMManagement",
+              "displayName": "Azure APIM Management",
+              "url": {
+                "displayName": "Management API URL",
+                "value": ""
+              },
+              "helpMarkDown": "URL of your APIM Management REST API. Accquired Security->API page in the publisher portal of your APIM.",
+              "authenticationSchemes": [
+                {
+                  "type": "ms.vss-endpoint.endpoint-auth-scheme-basic",
+                  "inputDescriptors": [
+                    {
+                      "id": "identifier",
+                      "name": "Identifier",
+                      "description": "Identifier",
+                      "inputMode": "textbox",
+                      "isConfidential": false,
+                      "validation": {
+                        "isRequired": true,
+                        "dataType": "string",
+                        "maxLength": 300
+                      },
+                      "values": {
+                        "inputId": "identifier",
+                        "isDisabled": false,
+                        "defaultValue": "identifier"
+                      }
+                    },
+                    {
+                      "id": "key",
+                      "name": "Primary or Secondary key",
+                      "description": "Primary or Secondary key for you APIM Management REST API.",
+                      "inputMode": "passwordbox",
+                      "isConfidential": true,
+                      "validation": {
+                        "isRequired": true,
+                        "dataType": "string",
+                        "maxLength": 300
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          }
     ],
     "files": [
         {
