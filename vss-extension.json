@@ -47,7 +47,7 @@
                 "ms.vss-distributed-task.tasks"
             ],
             "properties": {
-                "name": "API/Delete"
+                "name": "BuildTasks/API/Delete"
             }
         },
         {
@@ -57,7 +57,7 @@
               "ms.vss-endpoint.endpoint-types"
             ],
             "properties": {
-              "name": "APIMManagement",
+              "name": "APIMManagementService",
               "displayName": "Azure APIM Management",
               "url": {
                 "displayName": "Management API URL",
@@ -105,7 +105,7 @@
     ],
     "files": [
         {
-            "path": "API/Delete"
+            "path": "BuildTasks/API/Delete"
         },
         {
             "path": "images/apim.png", "addressable": true
