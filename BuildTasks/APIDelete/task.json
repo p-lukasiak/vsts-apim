@@ -10,6 +10,9 @@
       "Build",
       "Release"
     ],
+    "demands": [
+      "npm"
+    ],
     "version": {
       "Major": "0",
       "Minor": "1",
