@@ -13,10 +13,11 @@
     "demands": [
       "npm"
     ],
+    "minimumAgentVersion": "1.83.0",
     "version": {
       "Major": "0",
       "Minor": "1",
-      "Patch": "4"
+      "Patch": "18"
     },
     "groups": [
       {

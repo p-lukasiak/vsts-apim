@@ -1,5 +1,5 @@
 import * as tl from "vsts-task-lib/task";
-import * as common from "./common";
+import * as common from "./Common";
 
 const serviceConnectionFieldName = "connectedServiceName";
 

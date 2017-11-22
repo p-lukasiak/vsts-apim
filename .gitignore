@@ -1,3 +1,7 @@
 #Ignore Visual Studio files
 *.vsix
 *.zip
+node_modules/*
+dist/*
+package-lock.json
+BuildTasks/API*/common.ts

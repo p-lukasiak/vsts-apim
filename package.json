@@ -13,11 +13,11 @@
     "initdev:npm": "npm install",
     "initdev": "npm run initdev:npm",
     "clean": "rimraf dist",
-    "precompile:tasks": "node scripts/copyFilesToBuildTasks -u 2 BuildTasks/Common/common.ts BuildTasks",
+    "precompile:tasks": "node scripts/copyFilesToBuildTasks -u 2 BuildTasks/Common/Common.ts BuildTasks",
     "compile:tasks": "tsc --project BuildTasks",
     "postcompile:tasks": "npm run lint:tasks",
     "lint:tasks": "tslint -c tslint.json \"BuildTasks/!(@types)/*.ts",
-    "prelink:tasks": "mkdirp dist/_temp/node_modules && pushd \"dist/_temp\" && npm install vsts-task-lib@2.0.5 && npm install q@1.4.1 && popd",
+    "prelink:tasks": "mkdirp dist/_temp/node_modules && pushd \"dist/_temp\" && npm install vsts-task-lib@2.0.5 && npm install q@1.4.1 && npm install request@2.81.0 && popd",
     "link:tasks": "node scripts/copyfilesToBuildTasks -u 2 dist/_temp/node_modules/**/* dist/BuildTasks",
     "postlink:tasks": "rimraf dist/_temp",
     "content:tasks": "copyfiles \"./BuildTasks/*API*/**/!(*.ts)\" dist",
@@ -48,6 +48,7 @@
   },
   "dependencies": {
     "q": "^1.4.1",
-    "vsts-task-lib": "^2.0.5"
+    "vsts-task-lib": "^2.0.5",
+    "request": "^2.81.0"
   }
 }
