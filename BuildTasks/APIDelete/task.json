@@ -1,6 +1,6 @@
 {
     "id": "934b8cd0-65d0-4a5c-95e9-d3796ce7f65d",
-    "name": "DeleteAPI",
+    "name": "APIDelete",
     "friendlyName": "Delete API",
     "description": "Delete API in Azure API Management",
     "author": "Pawel Lukasiak",

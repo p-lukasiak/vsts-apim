@@ -6,12 +6,8 @@
     "rootDir": "../",
     "sourceMap": true
   },
-  "include": [
-    "Api/**/*"
-  ],
   "exclude": [
     "Common",
-    "Engine",
     "typings"
   ]
 }

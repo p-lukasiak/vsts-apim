@@ -11,7 +11,7 @@
             }
         ],
     "icons": {
-        "default": "images/apim.png"
+        "default": "icon.png"
      },
     "scopes": [
         "vso.build_execute"
@@ -28,6 +28,9 @@
     "content": {
         "details": {
             "path": "README.md"
+        },
+        "license": {
+            "path": "license.txt"
         }
     },
     "repository": {
@@ -38,16 +41,21 @@
         "color": "#0088DC",
         "theme": "light"
     },
+    "files": [
+        {
+            "path": "BuildTasks"
+        }
+    ],
     "contributions": [
         {
-            "id": "task-deleteAPI",
+            "id": "task-APIdelete",
             "type": "ms.vss-distributed-task.task",
             "description": "Delete API",
             "targets": [
                 "ms.vss-distributed-task.tasks"
             ],
             "properties": {
-                "name": "BuildTasks/API/Delete"
+                "name": "BuildTasks/APIDelete"
             }
         },
         {
@@ -102,13 +110,5 @@
               ]
             }
           }
-    ],
-    "files": [
-        {
-            "path": "BuildTasks/API/Delete"
-        },
-        {
-            "path": "images/apim.png", "addressable": true
-        }
     ]
 }
