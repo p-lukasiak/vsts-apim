@@ -12,7 +12,7 @@
     ],
     "icons": {
         "default": "icon.png"
-     },
+    },
     "scopes": [
         "vso.build_execute"
     ],
@@ -62,53 +62,89 @@
             "id": "apim-endpoint-type",
             "type": "ms.vss-endpoint.service-endpoint-type",
             "targets": [
-              "ms.vss-endpoint.endpoint-types"
+                "ms.vss-endpoint.endpoint-types"
             ],
             "properties": {
-              "name": "APIMManagementService",
-              "displayName": "Azure APIM Management",
-              "url": {
-                "displayName": "Management API URL",
-                "value": ""
-              },
-              "helpMarkDown": "Connection endpoint to APIM Management REST API. The identifer and keys can be retrived from Security->API page in the Publisher portal of your APIM.",
-              "authenticationSchemes": [
-                {
-                  "type": "ms.vss-endpoint.endpoint-auth-scheme-none",
-                  "inputDescriptors": [
+                "name": "APIMManagementService",
+                "displayName": "Azure APIM Management",
+                "url": {
+                    "displayName": "Management API URL",
+                    "value": ""
+                },
+                "helpMarkDown": "Connection endpoint to APIM Management REST API. The identifer and keys can be retrived from Security->API page in the Publisher portal of your APIM.",
+                "authenticationSchemes": [
                     {
-                      "id": "identifier",
-                      "name": "Identifier",
-                      "description": "Identifier",
-                      "inputMode": "textbox",
-                      "isConfidential": false,
-                      "validation": {
-                        "isRequired": true,
-                        "dataType": "string",
-                        "maxLength": 300
-                      },
-                      "values": {
-                        "inputId": "identifier",
-                        "isDisabled": false,
-                        "defaultValue": "identifier"
-                      }
-                    },
-                    {
-                      "id": "key",
-                      "name": "Primary or Secondary key",
-                      "description": "Primary or Secondary key for you APIM Management REST API.",
-                      "inputMode": "passwordbox",
-                      "isConfidential": true,
-                      "validation": {
-                        "isRequired": true,
-                        "dataType": "string",
-                        "maxLength": 300
-                      }
+                        "type": "ms.vss-endpoint.endpoint-auth-scheme-none",
+                        "inputDescriptors": [
+                            {
+                                "id": "service",
+                                "name": "API Management Service Name",
+                                "description": "Name of Azure API Management Service.",
+                                "inputMode": "textbox",
+                                "isConfidential": false,
+                                "validation": {
+                                    "isRequired": true,
+                                    "dataType": "string",
+                                    "maxLength": 300
+                                }
+                            },
+                            {
+                                "id": "subscriptionId",
+                                "name": "Azure Subcription Id",
+                                "description": "Identifier of Azure subscription where API Management Service is deployed.",
+                                "inputMode": "textbox",
+                                "isConfidential": false,
+                                "validation": {
+                                    "isRequired": true,
+                                    "dataType": "string",
+                                    "maxLength": 300
+                                }
+                            },
+                            {
+                                "id": "resourceGroup",
+                                "name": "Azure Resource Group Name",
+                                "description": "Name of Azure Resource Group where API Management Service is deployed.",
+                                "inputMode": "textbox",
+                                "isConfidential": false,
+                                "validation": {
+                                    "isRequired": true,
+                                    "dataType": "string",
+                                    "maxLength": 300
+                                }
+                            },
+                            {
+                                "id": "identifier",
+                                "name": "Identifier",
+                                "description": "Identifier for API Management REST API.",
+                                "inputMode": "textbox",
+                                "isConfidential": false,
+                                "validation": {
+                                    "isRequired": true,
+                                    "dataType": "string",
+                                    "maxLength": 300
+                                },
+                                "values": {
+                                    "inputId": "identifier",
+                                    "isDisabled": false,
+                                    "defaultValue": "identifier"
+                                }
+                            },
+                            {
+                                "id": "key",
+                                "name": "Primary or Secondary key",
+                                "description": "Primary or Secondary key for APIM Management REST API.",
+                                "inputMode": "passwordbox",
+                                "isConfidential": true,
+                                "validation": {
+                                    "isRequired": true,
+                                    "dataType": "string",
+                                    "maxLength": 300
+                                }
+                            }
+                        ]
                     }
-                  ]
-                }
-              ]
+                ]
             }
-          }
+        }
     ]
 }
