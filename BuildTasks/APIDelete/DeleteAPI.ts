@@ -11,4 +11,4 @@ const serviceConnection = common.getAPIMManagementEndpointDetails("connectedServ
 const restResource = "/apis/" + apiName;
 
 // Send the request to API Management
-common.restCall(serviceConnection, restResource, "DELETE", "", JSON.parse("{''}"));
+common.restCall(serviceConnection, restResource, "DELETE", "", {});
