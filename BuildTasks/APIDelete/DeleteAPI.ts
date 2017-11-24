@@ -15,8 +15,14 @@ const apiVersion = tl.getInput("apiVersion", true);
 const serviceConnection = common.getAPIMManagementEndpointDetails(serviceConnectionFieldName);
 
 // Create the request URL
-const restResource = "/apis/" + apiName;
+const restResource = serviceConnection.url
++ "/subscriptions/" + subscriptionId
++ "/resourceGroups/" + resourceGroupName
++ "/providers/Microsoft.ApiManagement"
++ "/service/" + serviceName
++ "/apis/" + apiName
++ "?api-version=" + apiVersion;
 
 // Send the request to API Management
 const headers = JSON.parse("{''}");
-common.restCall(serviceConnection.url, restResource, serviceConnection.identifier, serviceConnection.key, httpMethod, "", headers);
+common.restCall(serviceConnection, restResource, httpMethod, "", headers);

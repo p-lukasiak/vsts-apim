@@ -22,7 +22,7 @@ function createAccessToken(identifier: string, key: string): string {
     return "SharedAccessSignature uid=" + identifier + "&ex=" + expiry + "&sn=" + signature;
 }
 
-export function restCall(serviceConnection: any, restResource:string, httpVerb: string, body: string, headers: any) {
+export function restCall(serviceConnection: any, restResource: string, httpVerb: string, body: string, headers: any) {
 
     // Create access token 
     const accessToken = createAccessToken(serviceConnection.identifier, serviceConnection.key);
@@ -34,7 +34,7 @@ export function restCall(serviceConnection: any, restResource:string, httpVerb: 
     + "/providers/Microsoft.ApiManagement"
     + "/service/" + serviceConnection.serviceName
     + restResource
-    + "?api-version=" + serviceConnection.apiVersion; 
+    + "?api-version=" + serviceConnection.apiVersion;
 
     request({
         uri: restEndpoint,
@@ -66,7 +66,7 @@ function callBack(error, response, body) {
 export function getAPIMManagementEndpointDetails(inputFieldName): any {
 
     const apiVersion = "2017-03-01";
-    
+
     const apimMgmtEndpoint = tasklib.getInput(inputFieldName, true);
 
     const hostUrl = tasklib.getEndpointUrl(apimMgmtEndpoint, false);
