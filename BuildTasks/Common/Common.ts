@@ -22,22 +22,25 @@ function createAccessToken(identifier: string, key: string): string {
     return "SharedAccessSignature uid=" + identifier + "&ex=" + expiry + "&sn=" + signature;
 }
 
-export function restCall(serviceConnection: any, restResource: string, httpVerb: string, body: string, headers: any) {
+function createRestEndpoint(serviceConnection: any, restResource: string): string {
 
-    // Create access token 
-    const accessToken = createAccessToken(serviceConnection.identifier, serviceConnection.key);
-
-    // Compose REST endpoint
-    const restEndpoint = serviceConnection.url
+    // Compose and return the REST endpoint
+    return serviceConnection.url
     + "/subscriptions/" + serviceConnection.subscriptionId
     + "/resourceGroups/" + serviceConnection.resourceGroup
     + "/providers/Microsoft.ApiManagement"
     + "/service/" + serviceConnection.serviceName
     + restResource
     + "?api-version=" + serviceConnection.apiVersion;
+}
+
+export function restCall(serviceConnection: any, restResource: string, httpVerb: string, body: string, headers: any) {
+
+    // Create access token 
+    const accessToken = createAccessToken(serviceConnection.identifier, serviceConnection.key);
 
     request({
-        uri: restEndpoint,
+        uri: createRestEndpoint(serviceConnection, restResource),
         method: httpVerb,
         headers: {"Authorization": accessToken, ...headers},
         body: body,
