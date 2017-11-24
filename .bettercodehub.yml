@@ -1,0 +1,6 @@
+exclude:
+- /sdk/scripts/VSS.SDK.js
+component_depth: 1
+languages:
+- javascript
+- typescript
