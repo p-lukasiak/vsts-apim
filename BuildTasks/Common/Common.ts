@@ -15,7 +15,7 @@ function createAccessToken(identifier: string, key: string): string {
     + expiryDate.getHours()
     + expiryDate.getMinutes()
     + expiryDate.getSeconds();
-    tl.debug("Using expiry date" + expiry);
+    console.log("Using expiry date" + expiry);
 
     const dataToSign = identifier + "\n" + expiry;
     const signature = toBase64(crypto.HmacSHA512(dataToSign, key));
@@ -24,7 +24,7 @@ function createAccessToken(identifier: string, key: string): string {
 
 function createRestEndpoint(serviceConnection: any, restResource: string): string {
 
-    tl.debug("Create rest endpoint: " + serviceConnection.url);
+    console.log("Create rest endpoint: " + serviceConnection.url);
     // Compose and return the REST endpoint
     return serviceConnection.url
     + "/subscriptions/" + serviceConnection.subscriptionId
@@ -38,7 +38,7 @@ function createRestEndpoint(serviceConnection: any, restResource: string): strin
 export function restCall(serviceConnection: any, restResource: string, httpVerb: string, body: string, headers: any) {
 
     // Create access token 
-    tl.debug("Create access token for id: " + serviceConnection.identifier);
+    console.log("Create access token for id: " + serviceConnection.identifier);
     const accessToken = createAccessToken(serviceConnection.identifier, serviceConnection.key);
 
     request({
@@ -53,17 +53,17 @@ export function restCall(serviceConnection: any, restResource: string, httpVerb:
 
 function callBack(error, response, body) {
     if (error) {
-        tl.debug("Request ko with code: '".concat(response && response.statusCode).concat("'. Error is : '").concat(error));
+        console.log("Request ko with code: '".concat(response && response.statusCode).concat("'. Error is : '").concat(error));
         throw new Error("Request error:".concat(error));
     }
 
     tl.debug(body);
 
     if (response.statusCode >= 200 && response.statusCode < 400) {
-        tl.debug("Response ok.");
+        console.log("Response ok.");
     }
     else {
-        tl.debug("Request ko with code: '".concat(response.statusCode).concat("'."));
+        console.log("Request ko with code: '".concat(response.statusCode).concat("'."));
         throw new Error("Request error with code: '".concat(response.statusCode).concat("'."));
     }
 }
