@@ -24,6 +24,7 @@ function createAccessToken(identifier: string, key: string): string {
 
 function createRestEndpoint(serviceConnection: any, restResource: string): string {
 
+    tl.debug("Create rest endpoint: " + serviceConnection.url);
     // Compose and return the REST endpoint
     return serviceConnection.url
     + "/subscriptions/" + serviceConnection.subscriptionId
@@ -37,6 +38,7 @@ function createRestEndpoint(serviceConnection: any, restResource: string): strin
 export function restCall(serviceConnection: any, restResource: string, httpVerb: string, body: string, headers: any) {
 
     // Create access token 
+    tl.debug("Create access token for id: " + serviceConnection.identifier);
     const accessToken = createAccessToken(serviceConnection.identifier, serviceConnection.key);
 
     request({
